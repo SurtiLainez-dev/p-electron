@@ -16,6 +16,7 @@ function createWindow () {
     });
 
     mainWindow.once('ready-to-show', () => {
+        console.log("chequea")
         autoUpdater.checkForUpdatesAndNotify();
     });
 }
@@ -37,6 +38,7 @@ app.on('activate', function () {
 });
 
 ipcMain.on('app_version', (event) => {
+    console.log("verifico version")
     event.sender.send('app_version', { version: app.getVersion() });
 });
 
