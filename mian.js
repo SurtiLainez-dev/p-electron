@@ -16,6 +16,9 @@ function createWindow () {
         mainWindow = null;
     });
 
+    log.info('esta buscando actualizaciones - funciona');
+    log.warn('Some problem appears - funciona');
+
     mainWindow.once('ready-to-show', () => {
         log.info('esta buscando actualizaciones');
         log.warn('Some problem appears');
@@ -45,12 +48,18 @@ ipcMain.on('app_version', (event) => {
 });
 
 autoUpdater.on('update-available', () => {
+    log.info('esta buscando actualizaciones - data available');
+    log.warn('Some problem appears - data available');
     mainWindow.webContents.send('update_available');
 });
 autoUpdater.on('update-downloaded', () => {
+    log.info('esta buscando actualizaciones - update downloaded');
+    log.warn('Some problem appears - update downloaded');
     mainWindow.webContents.send('update_downloaded');
 });
 
 ipcMain.on('restart_app', () => {
+    log.info('esta buscando actualizaciones - restart app');
+    log.warn('Some problem appears - restart app');
     autoUpdater.quitAndInstall();
 });
