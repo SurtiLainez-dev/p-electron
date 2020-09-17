@@ -7,7 +7,6 @@ function createWindow () {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
-        show:false,
         webPreferences: {
             nodeIntegration: true,
         },
@@ -27,7 +26,6 @@ function createWindow () {
         log.info('esta buscando actualizaciones');
         log.warn('Some problem appears');
         autoUpdater.checkForUpdatesAndNotify();
-        mainWindow.show()
     });
 }
 
