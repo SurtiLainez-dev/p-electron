@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { autoUpdater } = require('electron-updater');
 let mainWindow;
+const log = require('electron-log')
 
 function createWindow () {
     mainWindow = new BrowserWindow({
@@ -16,7 +17,8 @@ function createWindow () {
     });
 
     mainWindow.once('ready-to-show', () => {
-        console.log("chequea")
+        log.info('esta buscando actualizaciones');
+        log.warn('Some problem appears');
         autoUpdater.checkForUpdatesAndNotify();
     });
 }

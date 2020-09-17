@@ -1,6 +1,6 @@
 {
   "name": "p_electron",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "mian.js",
   "scripts": {
@@ -10,8 +10,8 @@
     "deploy": "electron-builder build --win --publish always"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/SurtiLainez-dev/p-electron"
+    "type": "git",
+    "url": "https://github.com/SurtiLainez-dev/p-electron"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "electron-builder": "^22.8.0"
   },
   "dependencies": {
+    "electron-log": "^4.2.4",
     "electron-updater": "^4.3.4"
   }
 }
