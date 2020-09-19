@@ -2,7 +2,7 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const { autoUpdater } = require('electron-updater');
 let mainWindow;
 const log = require('electron-log')
-
+autoUpdater.checkForUpdatesAndNotify();
 function createWindow () {
     mainWindow = new BrowserWindow({
         width: 800,
@@ -20,12 +20,12 @@ function createWindow () {
     log.info('esta buscando actualizaciones - funciona');
     log.warn('Some problem appears - funciona');
 
-    mainWindow.once('ready-to-show', () => {
-        log.info('esta buscando actualizaciones');
-        log.warn('Some problem appears');
-        autoUpdater.checkForUpdatesAndNotify();
-        mainWindow.show()
-    });
+    // mainWindow.once('ready-to-show', () => {
+    //     log.info('esta buscando actualizaciones');
+    //     log.warn('Some problem appears');
+    //     autoUpdater.checkForUpdatesAndNotify();
+    //     mainWindow.show()
+    // });
 }
 
 app.on('ready', () => {
